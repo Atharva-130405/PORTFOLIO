@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atharva's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="phone-container">
+        <div class="phone-screen">
+            <!-- Status Bar -->
+            <div class="status-bar">
+                <span>⚡ 100% Passion</span>
+                <span>📡 5G Innovation</span>
+            </div>
+
+            <!-- Home Screen -->
+            <div class="home-screen" id="homeScreen">
+                <div class="wallpaper-text">
+                    <h1>ATHARVA</h1>
+                    <p>ENTC Engineer | Innovator | Startup Enthusiast</p>
+                </div>
+
+                <div class="app-grid">
+                    <!-- Contacts App -->
+                    <div class="app-icon" onclick="openApp('contacts')">
+                        <div class="app-icon-img" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                            👤
+                        </div>
+                        <div class="app-name">About</div>
+                    </div>
+
+                    <!-- Gallery App -->
+                    <div class="app-icon" onclick="openApp('gallery')">
+                        <div class="app-icon-img" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                            🖼️
+                        </div>
+                        <div class="app-name">Projects</div>
+                    </div>
+
+                    <!-- Settings App -->
+                    <div class="app-icon" onclick="openApp('settings')">
+                        <div class="app-icon-img" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                            ⚙️
+                        </div>
+                        <div class="app-name">Skills</div>
+                    </div>
+
+                    <!-- Calendar App -->
+                    <div class="app-icon" onclick="openApp('calendar')">
+                        <div class="app-icon-img" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
+                            📅
+                        </div>
+                        <div class="app-name">Timeline</div>
+                    </div>
+
+                    <!-- Notes App -->
+                    <div class="app-icon" onclick="openApp('notes')">
+                        <div class="app-icon-img" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+                            📝
+                        </div>
+                        <div class="app-name">Achievements</div>
+                    </div>
+
+                    <!-- Music App -->
+                    <div class="app-icon" onclick="openApp('music')">
+                        <div class="app-icon-img" style="background: linear-gradient(135deg, #ff6e7f 0%, #bfe9ff 100%);">
+                            🎵
+                        </div>
+                        <div class="app-name">Interests</div>
+                    </div>
+
+                    <!-- Contact App -->
+                    <div class="app-icon" onclick="openApp('contact')">
+                        <div class="app-icon-img" style="background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);">
+                            📞
+                        </div>
+                        <div class="app-name">Contact</div>
+                    </div>
+
+                    <!-- Links App -->
+                    <div class="app-icon" onclick="openApp('links')">
+                        <div class="app-icon-img" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            🔗
+                        </div>
+                        <div class="app-name">Links</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contacts App View -->
+            <div class="app-view" id="contactsApp">
+                <div class="app-header">
+                    <span class="back-btn" onclick="closeApp()">←</span>
+                    <h2>About Me</h2>
+                </div>
+                <div class="app-content">
+                    <div class="profile-section">
+                        <div class="profile-photo">A</div>
+                        <h2>Atharva</h2>
+                        <p style="color: #667eea; font-weight: 600;">ENTC Engineer | Innovator | Startup Enthusiast</p>
+                    </div>
+                    <div class="contact-field">
+                        <label>BIO</label>
+                        <div>Passionate about Data Science, IoT, AI, and building innovative startups. Love turning ideas into reality through technology.</div>
+                    </div>
+                    <div class="contact-field">
+                        <label>HOBBIES</label>
+                        <div>🚀 Entrepreneurship • 💻 Coding • 📸 Photography • ✈️ Travel</div>
+                    </div>
+                    <div class="contact-field">
+                        <label>LANGUAGES</label>
+                        <div>English • Hindi • Marathi</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery App View -->
+            <div class="app-view" id="galleryApp">
+                <div class="app-header">
+                    <span class="back-btn" onclick="closeApp()">←</span>
+                    <h2>Projects</h2>
+                </div>
+                <div class="app-content">
+                    <div class="gallery-grid">
+                        <div class="project-card" onclick="toggleProject(this)">
+                            <div class="project-icon">⚡</div>
+                            <div class="project-title">Smart EV Socket</div>
+                            <div class="project-tech">IoT • Embedded C • Smart Grid</div>
+                            <div class="project-detail">
+                                <strong>Hackathon Project (Tata Finalist)</strong><br>
+                                Intelligent EV charging solution with load balancing and real-time monitoring. Optimizes power distribution for multiple vehicles.
+                            </div>
+                        </div>
+
+                        <div class="project-card" onclick="toggleProject(this)">
+                            <div class="project-icon">📱</div>
+                            <div class="project-title">QRLINK - Smart Fan Control</div>
+                            <div class="project-tech">QR Code • IoT • Automation</div>
+                            <div class="project-detail">
+                                <strong>🏆 2nd Prize Winner - College Competition</strong><br>
+                                "Switch India to Switchless India" - QR code-based smart fan control system to automate speed & power control via smartphones. Enhanced user convenience and energy efficiency.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings App View -->
+            <div class="app-view" id="settingsApp">
+                <div class="app-header">
+                    <span class="back-btn" onclick="closeApp()">←</span>
+                    <h2>Skills</h2>
+                </div>
+                <div class="app-content">
+                    <div class="skill-category">
+                        <h3>💻 Programming Languages</h3>
+                        <div class="skill-badges-container">
+                            <span class="skill-badge">Python</span>
+                            <span class="skill-badge">C</span>
+                            <span class="skill-badge">Java</span>
+                            <span class="skill-badge">SQL</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>📊 Data Science Tools</h3>
+                        <div class="skill-toggle">
+                            <span class="skill-toggle-name">Power BI</span>
+                            <div class="toggle-switch"></div>
+                        </div>
+                        <div class="skill-toggle">
+                            <span class="skill-toggle-name">Pandas & NumPy</span>
+                            <div class="toggle-switch"></div>
+                        </div>
+                        <div class="skill-toggle">
+                            <span class="skill-toggle-name">Matplotlib & Seaborn</span>
+                            <div class="toggle-switch"></div>
+                        </div>
+                        <div class="skill-toggle">
+                            <span class="skill-toggle-name">Scikit-learn</span>
+                            <div class="toggle-switch"></div>
+                        </div>
+                        <div class="skill-toggle">
+                            <span class="skill-toggle-name">TensorFlow / PyTorch</span>
+                            <div class="toggle-switch"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>🛠️ Development Tools</h3>
+                        <div class="skill-toggle">
+                            <span class="skill-toggle-name">VS Code</span>
+                            <div class="toggle-switch"></div>
+                        </div>
+                        <div class="skill-toggle">
+                            <span class="skill-toggle-name">Jupyter Notebook</span>
+                            <div class="toggle-switch"></div>
+                        </div>
+                        <div class="skill-toggle">
+                            <span class="skill-toggle-name">Git & GitHub</span>
+                            <div class="toggle-switch"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>🎯 Domain Expertise</h3>
+                        <div class="skill-badges-container">
+                            <span class="skill-badge">📊 Data Analysis</span>
+                            <span class="skill-badge">📈 Data Visualization</span>
+                            <span class="skill-badge">🤖 Machine Learning</span>
+                            <span class="skill-badge">🧠 Deep Learning</span>
+                            <span class="skill-badge">📉 Statistical Analysis</span>
+                            <span class="skill-badge">🔮 Prompt Engineering</span>
+                            <span class="skill-badge">🌐 Web Development</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>🔋 Soft Skills (Battery Health)</h3>
+                        <div class="skill-toggle">
+                            <span class="skill-toggle-name">💼 Leadership</span>
+                            <div class="toggle-switch"></div>
+                        </div>
+                        <div class="skill-toggle">
+                            <span class="skill-toggle-name">🎨 Creativity</span>
+                            <div class="toggle-switch"></div>
+                        </div>
+                        <div class="skill-toggle">
+                            <span class="skill-toggle-name">🔄 Adaptability</span>
+                            <div class="toggle-switch"></div>
+                        </div>
+                        <div class="skill-toggle">
+                            <span class="skill-toggle-name">🎤 Public Speaking</span>
+                            <div class="toggle-switch"></div>
+                        </div>
+                        <div class="skill-toggle">
+                            <span class="skill-toggle-name">📢 Marketing</span>
+                            <div class="toggle-switch"></div>
+                        </div>
+                        <div class="skill-toggle">
+                            <span class="skill-toggle-name">🧩 Problem Solving</span>
+                            <div class="toggle-switch"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calendar App View -->
+            <div class="app-view" id="calendarApp">
+                <div class="app-header">
+                    <span class="back-btn" onclick="closeApp()">←</span>
+                    <h2>Education & Experience</h2>
+                </div>
+                <div class="app-content">
+                    <div class="education-cards">
+                        <div class="edu-card">
+                            <div class="edu-card-header">
+                                <div class="edu-icon">🎓</div>
+                                <div class="edu-title">
+                                    <h3>IIT Guwahati Data Science</h3>
+                                    <p>Ongoing Program</p>
+                                </div>
+                            </div>
+                            <div class="edu-card-body">
+                                Selected for prestigious Data Science program (Top 250 nationwide). Advanced training in ML, AI, and Data Analytics.
+                            </div>
+                        </div>
+
+                        <div class="edu-card">
+                            <div class="edu-card-header">
+                                <div class="edu-icon">📢</div>
+                                <div class="edu-title">
+                                    <h3>Marketing Manager</h3>
+                                    <p>RoomiesX</p>
+                                </div>
+                            </div>
+                            <div class="edu-card-body">
+                                Leading marketing strategy and brand development for innovative roommate matching startup. Managing campaigns, sponsorships, and user acquisition.
+                            </div>
+                        </div>
+
+                        <div class="edu-card">
+                            <div class="edu-card-header">
+                                <div class="edu-icon">🎓</div>
+                                <div class="edu-title">
+                                    <h3>B.Tech in ENTC</h3>
+                                    <p>D.Y. Patil College, Pune</p>
+                                </div>
+                            </div>
+                            <div class="edu-card-body">
+                                Electronics & Telecommunication Engineering. SGPA: 8.36. Focus on Signal Processing, Communication Systems, and Electronics.
+                            </div>
+                        </div>
+
+                        <div class="edu-card">
+                            <div class="edu-card-header">
+                                <div class="edu-icon">🏆</div>
+                                <div class="edu-title">
+                                    <h3>Tata Hackathon Finalist</h3>
+                                    <p>National Competition</p>
+                                </div>
+                            </div>
+                            <div class="edu-card-body">
+                                Developed Smart EV Socket solution. Competed among top innovators nationwide in sustainable technology.
+                            </div>
+                        </div>
+
+                        <div class="edu-card">
+                            <div class="edu-card-header">
+                                <div class="edu-icon">📜</div>
+                                <div class="edu-title">
+                                    <h3>Certifications</h3>
+                                    <p>Columbia & Deloitte</p>
+                                </div>
+                            </div>
+                            <div class="edu-card-body">
+                                Prompt Engineering (Columbia University) • Data Analytics Job Simulation (Deloitte Australia)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notes App View -->
+            <div class="app-view" id="notesApp">
+                <div class="app-header">
+                    <span class="back-btn" onclick="closeApp()">←</span>
+                    <h2>Achievements</h2>
+                </div>
+                <div class="app-content">
+                    <div class="notes-grid">
+                        <div class="note">
+                            <div class="note-title">🎓 Top 250 - IIT Guwahati</div>
+                            Selected for the prestigious IIT Guwahati Data Science Program among thousands of applicants nationwide. Demonstrates strong analytical and technical capabilities.
+                        </div>
+
+                        <div class="note">
+                            <div class="note-title">🏆 Tata Hackathon Finalist</div>
+                            Reached finals with Smart EV Socket project - an intelligent charging solution for electric vehicles with load balancing capabilities.
+                        </div>
+
+                        <div class="note">
+                            <div class="note-title">🚀 Marketing Manager</div>
+                            Marketing Manager at RoomiesX startup. Leading marketing strategy, brand development, sponsorship generation, and user acquisition campaigns.
+                        </div>
+
+                        <div class="note">
+                            <div class="note-title">📚 Continuous Learner</div>
+                            Pursuing ENTC Engineering alongside IIT Guwahati Data Science Program. Always exploring new technologies and expanding skillset across multiple domains.
+                        </div>
+
+                        <div class="note">
+                            <div class="note-title">🎤 Leadership Roles</div>
+                            Marketing Manager at EDC DYPCOE, Sponsorship Coordinator at TEDxDYP, and Debate Team Member at Tarkashastra. Active in college communities.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Music App View -->
+            <div class="app-view" id="musicApp">
+                <div class="app-header">
+                    <span class="back-btn" onclick="closeApp()">←</span>
+                    <h2>Personality & Interests</h2>
+                </div>
+                <div class="app-content">
+                    <div class="playlist">
+                        <div class="track">
+                            <div class="track-icon">🚀</div>
+                            <div class="track-info">
+                                <div class="track-name">Startup Hustle</div>
+                                <div class="track-desc">Building ventures, leading teams, creating impact</div>
+                            </div>
+                        </div>
+
+                        <div class="track">
+                            <div class="track-icon">💻</div>
+                            <div class="track-info">
+                                <div class="track-name">Code Symphony</div>
+                                <div class="track-desc">Love for programming and problem-solving</div>
+                            </div>
+                        </div>
+
+                        <div class="track">
+                            <div class="track-icon">✈️</div>
+                            <div class="track-info">
+                                <div class="track-name">Travel Diaries</div>
+                                <div class="track-desc">Exploring new places and cultures</div>
+                            </div>
+                        </div>
+
+                        <div class="track">
+                            <div class="track-icon">📸</div>
+                            <div class="track-info">
+                                <div class="track-name">Photo Chronicles</div>
+                                <div class="track-desc">Capturing moments through lens</div>
+                            </div>
+                        </div>
+
+                        <div class="track">
+                            <div class="track-icon">🤖</div>
+                            <div class="track-info">
+                                <div class="track-name">AI Revolution</div>
+                                <div class="track-desc">Passionate about artificial intelligence and ML</div>
+                            </div>
+                        </div>
+
+                        <div class="track">
+                            <div class="track-icon">🔧</div>
+                            <div class="track-info">
+                                <div class="track-name">Hardware Beats</div>
+                                <div class="track-desc">Embedded systems and IoT projects</div>
+                            </div>
+                        </div>
+
+                        <div class="track">
+                            <div class="track-icon">📚</div>
+                            <div class="track-info">
+                                <div class="track-name">Learning Loops</div>
+                                <div class="track-desc">Continuous learning and skill development</div>
+                            </div>
+                        </div>
+
+                        <div class="track">
+                            <div class="track-icon">🎯</div>
+                            <div class="track-info">
+                                <div class="track-name">Innovation Station</div>
+                                <div class="track-desc">Creating solutions that matter</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact App View -->
+            <div class="app-view" id="contactApp">
+                <div class="app-header">
+                    <span class="back-btn" onclick="closeApp()">←</span>
+                    <h2>Contact Me</h2>
+                </div>
+                <div class="app-content">
+                    <div class="dialer">
+                        <h3 style="margin-bottom: 20px;">📞 Get In Touch</h3>
+                        <button class="call-btn" onclick="window.location.href='mailto:bk.atharva2005@gmail.com'">
+                            📧 Email Me
+                        </button>
+                        <button class="call-btn" style="background: linear-gradient(135deg, #833AB4, #FD1D1D, #F77737);" onclick="window.open('https://www.instagram.com/atharvaxaa._/', '_blank')">
+                            📷 Instagram
+                        </button>
+                        <button class="call-btn" style="background: #0077b5;" onclick="window.open('https://www.linkedin.com/in/atharva-bhandarkawthekar-26012128b', '_blank')">
+                            💼 LinkedIn
+                        </button>
+                        
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <strong>Email:</strong> bk.atharva2005@gmail.com
+                            </div>
+                            <div class="contact-item">
+                                <strong>Phone:</strong> +91 7020893322
+                            </div>
+                            <div class="contact-item">
+                                <strong>Location:</strong> Pune, Maharashtra, India
+                            </div>
+                            <div class="contact-item" style="margin-top: 20px; padding: 15px; background: #fff3cd; border-radius: 8px; font-size: 13px;">
+                                💡 <strong>Let's Connect:</strong> Feel free to reach out via email or social media!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Links App View -->
+            <div class="app-view" id="linksApp">
+                <div class="app-header">
+                    <span class="back-btn" onclick="closeApp()">←</span>
+                    <h2>Professional Links</h2>
+                </div>
+                <div class="app-content">
+                    <div class="link-buttons">
+                        <a href="https://www.linkedin.com/in/atharva-bhandarkawthekar-26012128b" target="_blank" class="link-btn">
+                            <div class="link-icon linkedin-bg">in</div>
+                            <div class="link-text">
+                                <h3>LinkedIn</h3>
+                                <p>Professional journey and network</p>
+                            </div>
+                        </a>
+
+                        <a href="https://github.com/atharva" target="_blank" class="link-btn">
+                            <div class="link-icon github-bg">{ }</div>
+                            <div class="link-text">
+                                <h3>GitHub</h3>
+                                <p>Code repositories and projects</p>
+                            </div>
+                        </a>
+
+                        <a href="https://www.instagram.com/atharvaxaa._/" target="_blank" class="link-btn">
+                            <div class="link-icon" style="background: linear-gradient(135deg, #833AB4, #FD1D1D, #F77737); color: white;">📷</div>
+                            <div class="link-text">
+                                <h3>Instagram</h3>
+                                <p>Personal updates and photography</p>
+                            </div>
+                        </a>
+
+                        <div style="margin-top: 20px; padding: 15px; background: #e3f2fd; border-radius: 10px; font-size: 13px; line-height: 1.6;">
+                            <strong>🔗 Connect with me:</strong><br>
+                            Check out my professional profile on LinkedIn for work experience, recommendations, and network. Visit GitHub to explore my open-source contributions and project repositories.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

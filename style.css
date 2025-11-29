@@ -1,0 +1,507 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.phone-container {
+    width: 380px;
+    height: 760px;
+    background: #000;
+    border-radius: 50px;
+    padding: 15px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    position: relative;
+}
+
+.phone-screen {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    border-radius: 40px;
+    overflow: hidden;
+    position: relative;
+}
+
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 20px;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.home-screen {
+    padding: 20px;
+    text-align: center;
+}
+
+.wallpaper-text {
+    color: white;
+    margin: 30px 0;
+}
+
+.wallpaper-text h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.wallpaper-text p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.app-icon {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.app-icon:active {
+    transform: scale(0.95);
+}
+
+.app-icon-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 18px;
+    margin: 0 auto 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.app-name {
+    color: white;
+    font-size: 12px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.app-view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.3s ease;
+    overflow-y: auto;
+}
+
+.app-view.active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.app-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.back-btn {
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.app-content {
+    padding: 20px;
+}
+
+/* Contacts App Styles */
+.profile-section {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: white;
+}
+
+.contact-field {
+    margin: 15px 0;
+    padding: 15px;
+    background: #f5f5f5;
+    border-radius: 10px;
+}
+
+.contact-field label {
+    font-weight: 600;
+    color: #667eea;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+/* Gallery App Styles */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.project-card {
+    background: #f5f5f5;
+    border-radius: 12px;
+    padding: 15px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.project-card:active {
+    transform: scale(0.98);
+}
+
+.project-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.project-title {
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.project-tech {
+    font-size: 11px;
+    color: #666;
+}
+
+.project-detail {
+    display: none;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+    font-size: 12px;
+}
+
+.project-card.expanded .project-detail {
+    display: block;
+}
+
+/* Settings App Styles */
+.skill-category {
+    margin-bottom: 25px;
+}
+
+.skill-category h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.skill-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.skill-toggle-name {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.toggle-switch {
+    width: 50px;
+    height: 26px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    border-radius: 13px;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle-switch::after {
+    content: '✓';
+    position: absolute;
+    right: 4px;
+    top: 3px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #667eea;
+    font-weight: bold;
+}
+
+.skill-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    margin: 5px;
+}
+
+.skill-badges-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+/* Calendar App Styles */
+.education-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.edu-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.edu-card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.edu-icon {
+    font-size: 32px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edu-title {
+    flex: 1;
+}
+
+.edu-title h3 {
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+.edu-title p {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+.edu-card-body {
+    font-size: 13px;
+    line-height: 1.6;
+    opacity: 0.95;
+}
+
+/* Notes App Styles */
+.notes-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.note {
+    background: #fff9c4;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.note-title {
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #f57c00;
+}
+
+/* Music App Styles */
+.playlist {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.track {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    background: #f5f5f5;
+    border-radius: 10px;
+}
+
+.track-icon {
+    font-size: 28px;
+    width: 45px;
+    text-align: center;
+}
+
+.track-info {
+    flex: 1;
+}
+
+.track-name {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.track-desc {
+    font-size: 12px;
+    color: #666;
+}
+
+/* Contact App Styles */
+.dialer {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.call-btn {
+    background: #34c759;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 30px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 20px 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.call-btn:active {
+    transform: scale(0.95);
+}
+
+.contact-info {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.contact-item {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.contact-item strong {
+    color: #667eea;
+}
+
+/* Links App Styles */
+.link-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.link-btn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: #f5f5f5;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.2s;
+}
+
+.link-btn:active {
+    transform: scale(0.98);
+}
+
+.link-icon {
+    font-size: 32px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.linkedin-bg {
+    background: #0077b5;
+    color: white;
+}
+
+.github-bg {
+    background: #333;
+    color: white;
+}
+
+.link-text h3 {
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+.link-text p {
+    font-size: 12px;
+    color: #666;
+}
+
+@media (max-width: 420px) {
+    .phone-container {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+        padding: 0;
+    }
+    
+    .phone-screen {
+        border-radius: 0;
+    }
+}
